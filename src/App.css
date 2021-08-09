@@ -26,7 +26,8 @@
     font-weight: 700;
 }
 
-.page {
-    background: #E5E5E5;
-    margin: 0;
+.header_info__other {
+    font-family: 'Gotham Pro';
+    font-size: 18px;
+    line-height: 17px;
 }

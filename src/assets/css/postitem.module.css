@@ -1,0 +1,132 @@
+.newpost_item {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.user_info {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 30px 0px;
+}
+
+.header_info {
+    border-bottom: 1px solid #f4f4f4;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-family: 'Gotham Pro';
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.user_info__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 15px;
+}
+
+.user_info__name {
+    font-size: 14px;
+    line-height: 13.4px;
+    font-weight: 700;
+}
+
+.user_info__position {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.post_text {
+    font-size: 14px;
+    line-height: 21px;
+    padding: 15px 30px 10px 30px;
+}
+
+.post_text_large {
+    font-size: 14px;
+    line-height: 21px;
+    background: linear-gradient(to bottom, #181818, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.post_text__link {
+    text-transform: uppercase;
+    color: #0275B1;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 11px;
+}
+
+.post_img {
+    width: 790px;
+    height: 300px;
+    padding: 0px 30px 20px 30px;
+}
+
+.post_file {
+    width: 790px;
+    height: 80px;
+    background: #E9F0F8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin: 5px 30px 5px 30px;
+}
+
+.post_file__file_pic {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20px
+}
+
+.post_file__file_info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.post_file__file_name {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 700;
+}
+
+.post_file__file_desc {
+    font-size: 10px;
+    line-height: 15px;
+}
+
+.post_file__cloud {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.post_footer {
+    display: flex;
+    height: 49px;
+    margin-top: 15px;
+    border-top: 1px solid #f4f4f4;
+}
+
+.post_footer__button {
+    border: 1px solid #f4f4f4;
+    background-color: #fff;
+    display: flex;
+    padding: 12px 30px 0px 30px;
+}
+
+.post_footer__text {
+    font-size: 12px;
+    line-height: 11px;
+    font-weight: 700;
+}
