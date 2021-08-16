@@ -1,10 +1,12 @@
-function MenuItem({ props }) {
-  if (props == null) return null;
+function MenuItem(props) {
   return (
-      <a className = 'menu__link main-text_style' href=''>
-        <i className = {'icon ' + props[0] + ' menu__icon'} aria-hidden='true'></i>
-        <div>{props[1].toUpperCase()}</div>
-      </a>);
-  }
-  
-  export default MenuItem;
+    <div className = 'menu__item'>
+      <a className="menu__link main-text_style" href="">
+        <i className={"icon " + props.icon + " menu__icon"}  aria-hidden="true"></i>
+        <div>{props.title.toUpperCase()}</div>
+      </a>
+    </div>
+  );
+}
+
+export default MenuItem;

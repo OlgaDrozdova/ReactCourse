@@ -57,8 +57,13 @@
 }
 .icon-help-circle:before {
   content: "\e909";
-  color: #fff;
+  color: #0275b1;
 }
+.icon-help-circle:before {
+  content: "\e909";
+  color: #0275b1;
+}
+
 .icon-edit:before {
   content: "\e90a";
 }

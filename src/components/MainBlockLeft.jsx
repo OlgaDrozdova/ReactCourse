@@ -63,8 +63,24 @@ function MainBlockLeft(){
         }
       ];
 
+    // Нормально переписать
     let items = [];
     items.push(<NewPost/>);
+    
+    items.push(
+      <div className="sort">
+        <span className="sort__line"></span>
+        <span className="sort__text">sort by:  </span>
+        <select name="select" className="sort__select">
+          {/* Оптимизировать добавление значений */}
+          <option value="value1">VVVVV</option>
+          <option value="value2" selected>Trending</option>
+          <option value="value3">BLA bla bla</option>
+        </select>
+        <span className="sort__line"></span>
+      </div>
+    );
+    
     for(let i = 0; i < postItemInfo.length; i++){
         items.push(<PostItem info={postItemInfo[i]}/>);
     }

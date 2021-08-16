@@ -1,34 +1,39 @@
-import React from 'react';
-import './App.css';
-import './assets/sass/header.sass';
-import './assets/sass/main.sass';
-import Menu from './components/Menu';
-import MainBlockLeft from './components/MainBlockLeft';
-import MainBlockRight from './components/MainBlockRight';
+import React from "react";
+import "./App.css";
+import "./assets/sass/header.sass";
+import "./assets/sass/main.sass";
+import Menu from "./components/Menu";
+import MainBlockLeft from "./components/MainBlockLeft";
+import MainBlockRight from "./components/MainBlockRight";
+import Footer from "./components/Footer";
 
 function App() {
     return ( <
         >
         <
-        header className = 'header' >
+        header className = "header" >
         <
         Menu / >
         <
         /header> <
-        main className = 'main' >
+        main className = "main" >
         <
-        div className = 'main__left-block' >
+        div className = "main__left-block" >
         <
         MainBlockLeft / >
         <
         /div> <
-        div className = 'main__right-block' >
+        div className = "main__right-block" >
         <
         MainBlockRight / >
         <
         /div> <
         /main> <
-        footer > FOOTER < /footer> <
+        footer >
+        <
+        Footer / >
+        <
+        /footer> <
         />
     );
 }

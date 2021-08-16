@@ -1,10 +1,7 @@
-import React from 'react';
-
-function NewPostButtons({ props }){
-    if (props == null) return null;
+function NewPostButtons(props){
     return(
-      <a className = 'menu__link' href=''>
-        <img src = {props[0]}></img>
+      <a className = 'menu__link newpost__buttons' href=''>
+        <img src = {props.img}></img>
       </a>
       );
   }

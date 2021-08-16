@@ -4,21 +4,41 @@ import logo from '../images/Logo.png';
 import avatar from '../images/mini_avatar.jpg';
 
 function Menu(){
-  return <ul className = 'menu'>
-    <li className = 'menu__item menu__logo-item'>
+  let item = [
+    {icon: 'icon-rss', title:'feed'},
+    {icon: 'icon-users', title:'network'},
+    {icon: 'icon-briefcase', title:'jobs'},
+    {icon: 'icon-message-square', title:'chat'},
+    {icon: 'icon-bell', title:'notices'}
+  ];
+
+  return <div className = 'menu'>
+    <div className = 'menu__item menu__logo-item'>
       <a className = 'menu__link' href=''>
         <img src = {logo} alt = 'logo icon'></img>
       </a>
-    </li>
-    <li className = 'menu__item'><MenuItem props={['icon-rss', 'feed']}></MenuItem></li>
-    <li className = 'menu__item'><MenuItem props={['icon-users', 'network']}></MenuItem></li>
-    <li className = 'menu__item'><MenuItem props={['icon-briefcase', 'jobs']}></MenuItem></li>
-    <li className = 'menu__item'><MenuItem props={['icon-message-square', 'chat']}></MenuItem></li>
-    <li className = 'menu__item'><MenuItem props={['icon-bell', 'notices']}></MenuItem></li>
-    <li className = 'menu__item'>SEARCH</li>
-    <li className = 'menu__item'>PROFILE</li>
-    <li className = 'menu__item menu__other-item'><MenuItem props={['icon-more-horizontal', 'other']}></MenuItem></li>
-  </ul>
+    </div>
+    {item.map((item ) =><MenuItem icon= {item.icon} title={item.title} />)}
+    <div className="search_block">
+      <span className="icon icon-search search_icon"/>
+      <input className="search_block__input" type="search" placeholder="Search"/>
+    </div>
+    <div className="profile_block">
+      <img className="profile_block__avatar" src={avatar} alt=""/>
+        <div className="profile_block__desc">
+          <div className="profile_block__desc-row">
+            <div className="main-text_style">D.KARGAEV</div>
+            <div className="profile_block__lightgray-text">YOU</div>
+          </div>
+          <div className="profile_block__desc-row">
+            <div className="profile_block__gray-text">367 views today</div>
+            <div className="profile_block__green-text">+32</div>
+            <i className="icon icon-arrow-up-right icon-arrow"/>
+          </div>
+        </div>
+    </div>
+    <div className = 'menu__item menu__other-item'><MenuItem icon= 'icon-more-horizontal' title='other'/></div>
+  </div>
 }
 
 export default Menu;

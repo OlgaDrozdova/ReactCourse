@@ -7,15 +7,13 @@ import send from '../images/send.png';
 
 
 function NewPost(){
+  let buttons = [paperclip, image, film, send]
   return <div className = 'newpost'>
     <div className = 'newpost__caption main-text_style'>NEW POST</div>
     <div className = 'newpost__message'>
-      <span>What’s on your mind?</span>
+      <input className="newpost__input" type="search" placeholder="What’s on your mind?"/>
       <div>
-        <NewPostButtons props={[paperclip]}></NewPostButtons>
-        <NewPostButtons props={[image]}></NewPostButtons>
-        <NewPostButtons props={[film]}></NewPostButtons>
-        <NewPostButtons props={[send]}></NewPostButtons>
+        {buttons.map((item) =><NewPostButtons img={item} />)}
       </div>
     </div>
   </div>
