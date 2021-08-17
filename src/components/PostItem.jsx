@@ -5,8 +5,17 @@ import comment from "../images/comment.svg";
 import MainBlockLeftHeader from "./MainBlockLeftHeader";
 import PostText from "./PostText";
 import PostFile from "./PostFile";
+import Like from "./Like";
+import { useState } from "react";
 
 function PostItem(info) {
+  let likes = info.likes;
+  const [like, setLike] = useState(info.check_like);
+
+  const onClick = () => {
+    setLike(!like);
+    !like ? likes++ : likes--;
+  };
   return (
     <div className={style.newpost_item}>
       {info.hasOwnProperty("people") ? (
@@ -43,10 +52,11 @@ function PostItem(info) {
         <></>
       )}
       <div className={style.post_footer}>
-        <div className={style.post_footer__button}>
-          <img className={style.post_like} src={like} alt="" />
-          <span className={style.post_footer__text}>{info.likes}</span>
-        </div>
+        <Like
+          likes={likes}
+          onClick={onClick}
+          icon={like ? "icon-thumbs-up" : "icon-thumbs-up-1"}
+        />
         <div className={style.post_footer__button}>
           <img className={style.post_like} src={comment} alt="" />
           <span className={style.post_footer__text}>{info.comments}</span>

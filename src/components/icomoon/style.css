@@ -117,3 +117,8 @@
 .icon-bell:before {
   content: "\e90e";
 }
+
+.icon-thumbs-up:before {
+  content: "\e912";
+  color: #0275b1;
+}
