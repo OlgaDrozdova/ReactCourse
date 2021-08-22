@@ -11,6 +11,7 @@ import file from "../images/file.svg";
 function MainBlockLeft() {
   let postItemInfo = [
     {
+      id: "p0",
       header: " liked this",
       people: ["Ted Bell", "Annette Nguyen", "Cody Hawkins"],
       avatar: theresa_photo,
@@ -23,6 +24,7 @@ function MainBlockLeft() {
       comments: 9,
     },
     {
+      id: "p1",
       header: " comment this",
       people: ["Audrey Alexander"],
       avatar: kyle_photo,
@@ -35,6 +37,7 @@ function MainBlockLeft() {
       comments: 3,
     },
     {
+      id: "p2",
       header: "High rated post from your feed",
       avatar: brandon_photo,
       name: "Brandon Wilson",
@@ -55,6 +58,7 @@ function MainBlockLeft() {
       comments: 7,
     },
     {
+      id: "p3",
       header: "First post from ",
       people: ["Audrey Alexander"],
       avatar: audrey_photo,
@@ -67,6 +71,18 @@ function MainBlockLeft() {
       comments: 0,
     },
   ];
+
+  postItemInfo.map((item) =>
+    localStorage.getItem(item.id + "check") == null
+      ? localStorage.setItem(item.id + "check", JSON.stringify(item.check_like))
+      : item.check_like
+  );
+
+  postItemInfo.map((item) =>
+    localStorage.getItem(item.id + "like") == null
+      ? localStorage.setItem(item.id + "like", JSON.stringify(item.likes))
+      : item.likes
+  );
 
   return (
     <>
@@ -84,7 +100,10 @@ function MainBlockLeft() {
         </select>
         <span className="sort__line"></span>
       </div>
-      {postItemInfo.map((item) => <PostItem {...item}/>)} 
+      {postItemInfo.map((item) => (
+        <PostItem {...item} />
+      ))}
+      {/* {postItemInfo.map((item) => <PostItem {...localStorage.getItem(item.key)}/>)}  */}
     </>
   );
 }

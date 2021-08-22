@@ -9,15 +9,29 @@ import Like from "./Like";
 import { useState } from "react";
 
 function PostItem(info) {
-  const [like, setLike] = useState(info.check_like);
-  const [liked, unLiked] = useState(info.likes);
+
+//   const [like, setLike] = useState(info.check_like);
+//   const [liked, unLiked] = useState(info.likes);
+//   const [like, setLike] = useState(localStorage.setItem(info.key, info.check_like));
+
+let checkLike = localStorage.getItem(info.id+"check");
+let countLike = localStorage.getItem(info.id+"like");
+
+
+const [like, setLike] = useState(JSON.parse(checkLike));
+const [liked, unLiked] = useState(JSON.parse(countLike));
+
 
 
   const onClick = () => {
     setLike(!like);
     if(like == true){
+        localStorage[info.id+"check"] = !like;
+        localStorage[info.id+"like"] = liked-1;
         unLiked(liked-1);
     }else{
+        localStorage[info.id+"check"] = !like;
+        localStorage[info.id+"like"] = liked+1;
         unLiked(liked+1);
     }
   };
