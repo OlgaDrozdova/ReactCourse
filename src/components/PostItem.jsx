@@ -9,12 +9,17 @@ import Like from "./Like";
 import { useState } from "react";
 
 function PostItem(info) {
-  let likes = info.likes;
   const [like, setLike] = useState(info.check_like);
+  const [liked, unLiked] = useState(info.likes);
+
 
   const onClick = () => {
     setLike(!like);
-    !like ? likes++ : likes--;
+    if(like == true){
+        unLiked(liked-1);
+    }else{
+        unLiked(liked+1);
+    }
   };
   return (
     <div className={style.newpost_item}>
@@ -53,7 +58,7 @@ function PostItem(info) {
       )}
       <div className={style.post_footer}>
         <Like
-          likes={likes}
+          likes={liked}
           onClick={onClick}
           icon={like ? "icon-thumbs-up" : "icon-thumbs-up-1"}
         />
