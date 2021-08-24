@@ -9,32 +9,33 @@ import Like from "./Like";
 import { useState } from "react";
 
 function PostItem(info) {
+  let checkLike = localStorage.getItem(info.id + "check");
+  let countLike = localStorage.getItem(info.id + "like");
+  let postText = localStorage.getItem(info.id + "text");
 
-//   const [like, setLike] = useState(info.check_like);
-//   const [liked, unLiked] = useState(info.likes);
-//   const [like, setLike] = useState(localStorage.setItem(info.key, info.check_like));
-
-let checkLike = localStorage.getItem(info.id+"check");
-let countLike = localStorage.getItem(info.id+"like");
-
-
-const [like, setLike] = useState(JSON.parse(checkLike));
-const [liked, unLiked] = useState(JSON.parse(countLike));
-
-
+  const [like, setLike] = useState(JSON.parse(checkLike));
+  const [liked, unLiked] = useState(JSON.parse(countLike));
+  //const [text, fullText] = useState(JSON.parse(postText).substr(0, 330));
+//   const [text, fullText] = useState(true);
 
   const onClick = () => {
     setLike(!like);
-    if(like == true){
-        localStorage[info.id+"check"] = !like;
-        localStorage[info.id+"like"] = liked-1;
-        unLiked(liked-1);
-    }else{
-        localStorage[info.id+"check"] = !like;
-        localStorage[info.id+"like"] = liked+1;
-        unLiked(liked+1);
+    if (like == true) {
+      localStorage[info.id + "check"] = !like;
+      localStorage[info.id + "like"] = liked - 1;
+      unLiked(liked - 1);
+    } else {
+      localStorage[info.id + "check"] = !like;
+      localStorage[info.id + "like"] = liked + 1;
+      unLiked(liked + 1);
     }
   };
+
+//   const readMore = () =>{
+//     //return <><div>{fullText(JSON.parse(postText))}</div></>;
+//     fullText(!text);
+    
+//   }
   return (
     <div className={style.newpost_item}>
       {info.hasOwnProperty("people") ? (
@@ -56,7 +57,7 @@ const [liked, unLiked] = useState(JSON.parse(countLike));
         </div>
       </div>
       {info.hasOwnProperty("post_text") ? (
-        <PostText post_text={info.post_text} />
+        <PostText full_text={JSON.parse(postText)}/>
       ) : (
         <></>
       )}

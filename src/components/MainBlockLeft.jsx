@@ -84,6 +84,12 @@ function MainBlockLeft() {
       : item.likes
   );
 
+  postItemInfo.map((item) =>
+    localStorage.getItem(item.id + "text") == null
+      ? localStorage.setItem(item.id + "text", JSON.stringify(item.post_text))
+      : item.post_text
+  );
+
   return (
     <>
       <NewPost />
@@ -103,7 +109,6 @@ function MainBlockLeft() {
       {postItemInfo.map((item) => (
         <PostItem {...item} />
       ))}
-      {/* {postItemInfo.map((item) => <PostItem {...localStorage.getItem(item.key)}/>)}  */}
     </>
   );
 }

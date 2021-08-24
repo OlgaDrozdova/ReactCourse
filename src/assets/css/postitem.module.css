@@ -46,7 +46,7 @@
     padding: 15px 30px 10px 30px;
 }
 
-.post_text_large {
+.post_text_mini {
     font-size: 14px;
     line-height: 21px;
     background: linear-gradient(to bottom, #181818, #FFFFFF);
@@ -55,12 +55,20 @@
     margin-bottom: 15px;
 }
 
+.post_text_large {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
 .post_text__link {
     text-transform: uppercase;
     color: #0275B1;
     text-decoration: none;
     font-size: 12px;
     line-height: 11px;
+    cursor: pointer;
 }
 
 .post_img {
