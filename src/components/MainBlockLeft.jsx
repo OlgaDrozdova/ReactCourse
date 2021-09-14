@@ -90,6 +90,13 @@ function MainBlockLeft() {
       : item.post_text
   );
 
+  postItemInfo.map((item) =>
+  localStorage.getItem(item.id + "comments") == null
+    ? localStorage.setItem(item.id + "comments", JSON.stringify(item.comments))
+    : item.comments
+);
+
+
   return (
     <>
       <NewPost />
@@ -98,11 +105,11 @@ function MainBlockLeft() {
         <span className="sort__text">sort by: </span>
         <select name="select" className="sort__select">
           {/* Оптимизировать добавление значений */}
-          <option value="value1">VVVVV</option>
+          <option value="value1" >Likes</option>
           <option value="value2" selected>
             Trending
           </option>
-          <option value="value3">BLA bla bla</option>
+          <option value="value3">Comments</option>
         </select>
         <span className="sort__line"></span>
       </div>

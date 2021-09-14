@@ -44,9 +44,10 @@ function Footer() {
       </div>
       <div className={style.footer__lang}>
         <span className={style.footer__list_title_access}>Language</span>
+        {/* оптмизировать добавление */}
         <select className={style.footer__language_selector}>
-          <option>Пункт 1</option>
-          <option>Пункт 2</option>
+          <option>English</option>
+          <option>Russian</option>
         </select>
       </div>
     </div>

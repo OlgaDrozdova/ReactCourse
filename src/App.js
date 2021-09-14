@@ -6,6 +6,8 @@ import Menu from "./components/Menu";
 import MainBlockLeft from "./components/MainBlockLeft";
 import MainBlockRight from "./components/MainBlockRight";
 import Footer from "./components/Footer";
+//import store from "./Redux/store";
+//import { Provider } from "react-redux";
 
 function App() {
     return ( <
@@ -15,25 +17,25 @@ function App() {
         <
         Menu / >
         <
-        /header> <
+        /header>{" "} <
         main className = "main" >
         <
         div className = "main__left-block" >
         <
         MainBlockLeft / >
         <
-        /div> <
+        /div>{" "} <
         div className = "main__right-block" >
         <
         MainBlockRight / >
         <
-        /div> <
-        /main> <
+        /div>{" "} <
+        /main>{" "} <
         footer >
         <
         Footer / >
         <
-        /footer> <
+        /footer>{" "} <
         />
     );
 }
