@@ -10,34 +10,24 @@ import Footer from "./components/Footer";
 //import { Provider } from "react-redux";
 
 function App() {
-    return ( <
-        >
-        <
-        header className = "header" >
-        <
-        Menu / >
-        <
-        /header>{" "} <
-        main className = "main" >
-        <
-        div className = "main__left-block" >
-        <
-        MainBlockLeft / >
-        <
-        /div>{" "} <
-        div className = "main__right-block" >
-        <
-        MainBlockRight / >
-        <
-        /div>{" "} <
-        /main>{" "} <
-        footer >
-        <
-        Footer / >
-        <
-        /footer>{" "} <
-        />
-    );
+  return (
+    <>
+      <header className="header">
+        <Menu />
+      </header>{" "}
+      <main className="main">
+        <div className="main__left-block">
+          <MainBlockLeft />
+        </div>{" "}
+        <div className="main__right-block">
+          <MainBlockRight />
+        </div>{" "}
+      </main>{" "}
+      <footer>
+        <Footer />
+      </footer>{" "}
+    </>
+  );
 }
 
 export default App;
